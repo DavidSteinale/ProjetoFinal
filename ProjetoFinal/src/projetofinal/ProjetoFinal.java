@@ -20,17 +20,21 @@ public class ProjetoFinal {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        
         AnalistaDAO analista = new AnalistaDAO();
         
         System.out.println("Selecione uma opção:");
         System.out.println("1 - Cadastro de analista.");
-        System.out.println("2 - Cadastro de empresa.");
+        System.out.println("2 - Listar de analsita.");
         int op = scanner.nextInt();
                
         switch(op){
-                case 1:
+                case 1:                    
                     analista.inserir();         
                     break;
+                case 2:
+                    analista.lista();
+                    break;    
                 default:
                     System.out.println("opção invalida");
         }
