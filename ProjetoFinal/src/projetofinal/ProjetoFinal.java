@@ -25,8 +25,9 @@ public class ProjetoFinal {
 
         System.out.println("Selecione uma opção:");
         System.out.println("1 - Cadastro de analista.");
-        System.out.println("2 - Listar de analsita.");
-        System.out.println("3 - Deletar de analsita.");
+        System.out.println("2 - Mostrar os analsita.");
+        System.out.println("3 - Deletar analsita.");
+        System.out.println("4 - Atualizar os dados do analsita.");
         
         int op = scanner.nextInt();
 
@@ -40,6 +41,9 @@ public class ProjetoFinal {
             case 3:
                 analista.deletar();
                 break;
+            case 4:
+                analista.atualizar();
+                break;    
         }
 
     }

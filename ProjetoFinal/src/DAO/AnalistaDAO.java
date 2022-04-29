@@ -1,6 +1,7 @@
 package DAO;
 
 import java.util.Scanner;
+import projetofinal.Atualizar;
 import projetofinal.Deletar;
 import projetofinal.Inserir;
 import projetofinal.Lista;
@@ -29,4 +30,16 @@ public class AnalistaDAO {
         Deletar deletar = new Deletar();
         deletar.analista(cod_analista);        
     }
+    
+    public void atualizar(){
+        System.out.println("Informe o id do analsita a ser atualizado:");
+        int cod_analista = scanner.nextInt();
+        System.out.println("Informe o novo nome do analista:");
+        String nome = scanner.nextLine().toUpperCase();  
+        scanner.next();
+        System.out.println("nome analsita" + nome);
+        Atualizar atualizar = new Atualizar();
+        atualizar.analista(nome, cod_analista);        
+    }
+    
 }
