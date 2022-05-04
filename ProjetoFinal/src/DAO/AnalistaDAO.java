@@ -35,8 +35,7 @@ public class AnalistaDAO {
         System.out.println("Informe o id do analsita a ser atualizado:");
         int cod_analista = scanner.nextInt();
         System.out.println("Informe o novo nome do analista:");
-        String nome = scanner.nextLine().toUpperCase();  
-        scanner.next();
+        String nome = scanner.next().toUpperCase();  
         System.out.println("nome analsita" + nome);
         Atualizar atualizar = new Atualizar();
         atualizar.analista(nome, cod_analista);        
