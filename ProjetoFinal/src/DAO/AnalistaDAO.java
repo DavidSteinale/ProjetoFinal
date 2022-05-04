@@ -19,26 +19,27 @@ public class AnalistaDAO {
         this.nome = scanner.nextLine().toUpperCase();
         inserir.analista(this.nome);
     }
-    public void lista(){
+
+    public void lista() {
         Lista lista = new Lista();
-        lista.analista();        
+        lista.analista();
     }
-    
-    public void deletar(){
+
+    public void deletar() {
         System.out.println("Informe o codigo do analista a ser excluido?");
         int cod_analista = scanner.nextInt();
         Deletar deletar = new Deletar();
-        deletar.analista(cod_analista);        
+        deletar.analista(cod_analista);
     }
-    
-    public void atualizar(){
+
+    public void atualizar() {
         System.out.println("Informe o id do analsita a ser atualizado:");
         int cod_analista = scanner.nextInt();
+        scanner.nextLine();
         System.out.println("Informe o novo nome do analista:");
-        String nome = scanner.next().toUpperCase();  
-        System.out.println("nome analsita" + nome);
+        String nome = scanner.nextLine().toUpperCase();
         Atualizar atualizar = new Atualizar();
-        atualizar.analista(nome, cod_analista);        
+        atualizar.analista(nome, cod_analista);
     }
-    
+
 }

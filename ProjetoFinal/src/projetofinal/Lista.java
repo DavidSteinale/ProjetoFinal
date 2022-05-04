@@ -20,7 +20,7 @@ public class Lista {
             while (resultado.next()) {
                 int codigo = Integer.parseInt(resultado.getString("id_analista"));
                 String nome = resultado.getString("nome_analista");
-                System.out.println(codigo + " -"+ util.preencheComEspaco(nome, " ", 25, 1));
+                System.out.println(codigo + " - "+ util.preencheComEspaco(nome, " ", 25, 1));
             }
         } catch (Exception e) {
             System.out.println("Erro ao executar o comando: " + e);

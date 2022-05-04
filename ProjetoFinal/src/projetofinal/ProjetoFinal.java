@@ -21,30 +21,34 @@ public class ProjetoFinal {
         Scanner scanner = new Scanner(System.in);
 
         AnalistaDAO analista = new AnalistaDAO();
-        
 
-        System.out.println("Selecione uma opção:");
-        System.out.println("1 - Cadastro de analista.");
-        System.out.println("2 - Mostrar os analsita.");
-        System.out.println("3 - Deletar analsita.");
-        System.out.println("4 - Atualizar os dados do analsita.");
-        
-        int op = scanner.nextInt();
+        String op;
 
-        switch (op) {
-            case 1:
-                analista.inserir();
-                break;
-            case 2:
-                analista.lista();
-                break;
-            case 3:
-                analista.deletar();
-                break;
-            case 4:
-                analista.atualizar();
-                break;    
-        }
+        do {
+            System.out.println("Selecione uma opção:");
+            System.out.println("1 - Cadastro de analista.");
+            System.out.println("2 - Mostrar os analsita.");
+            System.out.println("3 - Deletar analsita.");
+            System.out.println("4 - Atualizar os dados do analsita.");
 
+            int menu = scanner.nextInt();
+
+            switch (menu) {
+                case 1:
+                    analista.inserir();
+                    break;
+                case 2:
+                    analista.lista();
+                    break;
+                case 3:
+                    analista.deletar();
+                    break;
+                case 4:
+                    analista.atualizar();
+                    break;
+            }
+            System.out.println("Deseja voltar ao menu?");
+            op = scanner.next().toUpperCase();
+        } while (op.equalsIgnoreCase("sim"));
     }
 }

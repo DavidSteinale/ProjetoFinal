@@ -11,10 +11,12 @@ public class Inserir {
     
       
     public void analista(String nome){
-        String sql = "INSERT INTO analista(nome_analista)\n"
-                + "VALUES (' " + nome + "')";
+//        String sql = "INSERT INTO analista(nome_analista)\n"
+//                + "VALUES (' " + nome + "')";
         try {
-            PreparedStatement inserir = conn.getConexao().prepareStatement(sql);
+            PreparedStatement inserir = conn.getConexao().prepareStatement("INSERT INTO analista(nome_analista)\n"
+                + "VALUES (?)");
+            inserir.setString(1, nome);
             inserir.executeUpdate();
             System.out.println("Cadastrado com sucesso!!!");
         } catch (Exception e) {
