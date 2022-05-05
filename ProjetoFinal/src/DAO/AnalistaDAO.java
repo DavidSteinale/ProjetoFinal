@@ -17,7 +17,7 @@ public class AnalistaDAO {
         System.out.println("CADASTRO DE ANALISTA");
         System.out.print("Digite o nome completo do analista: ");
         this.nome = scanner.nextLine().toUpperCase();
-        inserir.analista(this.nome);
+        inserir.analista(this.nome);        
     }
 
     public void lista() {
@@ -43,3 +43,4 @@ public class AnalistaDAO {
     }
 
 }
+
