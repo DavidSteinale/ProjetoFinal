@@ -4,6 +4,7 @@
 package projetofinal;
 
 import DAO.AnalistaDAO;
+import DAO.AtendimentoDAO;
 import conexao.Conexao;
 import java.util.Scanner;
 
@@ -21,30 +22,33 @@ public class ProjetoFinal {
         Scanner scanner = new Scanner(System.in);
 
         AnalistaDAO analista = new AnalistaDAO();
+        AtendimentoDAO atendimento = new AtendimentoDAO();
 
         String op;
 
-        do {
+//        
+
+do {
             System.out.println("Selecione uma opção:");
-            System.out.println("1 - Cadastro de analista.");
-            System.out.println("2 - Mostrar os analsita.");
-            System.out.println("3 - Deletar analsita.");
-            System.out.println("4 - Atualizar os dados do analsita.");
+            System.out.println("1 - Iniciar Atendimento.");
+            System.out.println("2 - Listar Atendimentos.");
+            System.out.println("3 - Deletar Atendimento.");
+            System.out.println("4 - Atualizar os dados do Atendimento.");
 
             int menu = scanner.nextInt();
 
             switch (menu) {
                 case 1:
-                    analista.inserir();
+                    atendimento.inserir();
                     break;
                 case 2:
-                    analista.lista();
+                    atendimento.lista();
                     break;
                 case 3:
-                    analista.deletar();
+                    atendimento.deletar();
                     break;
                 case 4:
-                    analista.atualizar();
+                    atendimento.atualizar();
                     break;
             }
             System.out.println("Deseja voltar ao menu?");

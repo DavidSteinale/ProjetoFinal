@@ -17,4 +17,15 @@ public class Deletar {
             System.out.println("Erro ao executar o comando: " + e);
         }
     }
+
+    public void atendimento(int num_atend) {
+        String sql = "DELETE FROM tb_atendimento WHERE num_atendimento = (' " + num_atend + "')";
+        try {
+            PreparedStatement inserir = conn.getConexao().prepareStatement(sql);
+            inserir.executeUpdate();
+            System.out.println("Excluido com sucesso!!!");
+        } catch (Exception e) {
+            System.out.println("Erro ao executar o comando: " + e);
+        }
+    }
 }
