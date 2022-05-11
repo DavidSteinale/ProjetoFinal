@@ -24,7 +24,6 @@ public class AtendimentoDAO {
         this.id_emp = scanner.nextInt();
         System.out.print("Insira o ID do analista: ");
         this.id_ana = scanner.nextInt();
-
         inserir.atendimento(descricao, id_emp, id_ana);
     }
 
@@ -35,21 +34,18 @@ public class AtendimentoDAO {
 
     public void deletar() {
         Deletar deletar = new Deletar();
-        System.out.println("Informe o numero do atendimento a ser excluido?");
+        System.out.print("Informe o numero do atendimento a ser excluido?");
         int num_atend = scanner.nextInt();
-
         deletar.atendimento(num_atend);
     }
 
     public void atualizar() {
         Atualizar atualizar = new Atualizar();
-
-        System.out.println("Informe o número do atendimento a ser atualizado");
+        System.out.print("Informe o número do atendimento a ser atualizado");
         int num_atend = scanner.nextInt();
         scanner.nextLine();
-        System.out.println("Insira a nova descrição: ");
+        System.out.print("Insira a nova descrição: ");
         String descricao = scanner.nextLine().toUpperCase();
-
         atualizar.atendimento(descricao, num_atend);
     }
 

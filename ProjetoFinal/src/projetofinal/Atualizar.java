@@ -8,9 +8,8 @@ public class Atualizar {
     Conexao conn = new Conexao();
 
     public void analista(String nome, int id) {
-
         try {
-            PreparedStatement alterar = conn.getConexao().prepareStatement("UPDATE analista SET nome_analista = ? WHERE ID_ANALISTA=?");
+            PreparedStatement alterar = conn.getConexao().prepareStatement("UPDATE tb_analista SET nome_analista = ? WHERE ID_ANALISTA=?");
             alterar.setString(1, nome);
             alterar.setInt(2, id);
             alterar.executeUpdate();
@@ -20,12 +19,37 @@ public class Atualizar {
         }
     }
 
-    //public void atendimento(String descricao, int id_emp, int id_ana, int num_atend) 
-    public void atendimento(String descricao, int num_atend) {
-//        String sql = "UPDATE tb_atendimento SET descricao = ' " + descricao + "'WHERE num_atendimento='"+ num_atend + "'";
-//        String sql = "UPDATE tb_atendimento SET id_empresa = ' " + id_emp + "'WHERE num_atendimento='"+ num_atend + "'";
-//        String sql = "UPDATE tb_atendimento SET id_analista = ' " + id_ana + "'WHERE num_atendimento='"+ num_atend + "'";
+    public void contato(String nome, String telefone, String email, int id) {
+        try {
+            PreparedStatement alterar = conn.getConexao().prepareStatement("UPDATE tb_contato SET nome=?, telefone=?, email=?\n"
+                    + "WHERE id_contato=?");
+            alterar.setString(1, nome);
+            alterar.setString(2, telefone);
+            alterar.setString(3, email);
+            alterar.setInt(4, id);
+            alterar.executeUpdate();
+            System.out.println("Cadastrado com sucesso!!!");
+        } catch (Exception e) {
+            System.out.println("Erro ao executar o comando: " + e);
+        }
+    }
 
+    public void empresa(String razaoSocial, String cnpj, String telefone, String endereco, boolean ativo, int idContato) {
+        //String statement = "UPDATE tb_empresa SET razao_social = ?, cnpj = ?, telefone = ?, endereco = ?, ativo = ?, WHERE id_empresa =?";
+        try {
+            PreparedStatement alterar = conn.getConexao().prepareStatement("UPDATE tb_empresa SET razao_social = ?, cnpj = ?, telefone = ?, endereco = ?, ativo = ?, WHERE id_empresa =?");
+            alterar.setString(1, razaoSocial);
+            alterar.setString(2, cnpj);
+            alterar.setString(3, telefone);
+            alterar.setString(4, endereco);
+            alterar.setBoolean(5, ativo);
+            System.out.println("Empresa atualizada com sucesso! :)");
+        } catch (Exception e) {
+            System.out.println("Erro ao executar o comando: " + e);
+        }
+    }
+
+    public void atendimento(String descricao, int num_atend) {
         try {
             PreparedStatement alterar = conn.getConexao().prepareStatement("UPDATE tb_atendimento SET descricao = ? WHERE num_atendimento = ?");
             alterar.setString(1, descricao);

@@ -10,13 +10,43 @@ public class Inserir {
     Conexao conn = new Conexao();
 
     public void analista(String nome) {
-
         try {
-            PreparedStatement inserir = conn.getConexao().prepareStatement("INSERT INTO analista(nome_analista)\n"
+            PreparedStatement inserir = conn.getConexao().prepareStatement("INSERT INTO tb_analista(nome_analista)\n"
                     + "VALUES (?)");
             inserir.setString(1, nome);
             inserir.executeUpdate();
             System.out.println("Cadastrado com sucesso!!!");
+        } catch (Exception e) {
+            System.out.println("Erro ao executar o comando: " + e);
+        }
+    }
+
+    public void contato(String nome, String telefone, String email) {
+        try {
+            PreparedStatement inserir = conn.getConexao().prepareStatement("INSERT INTO tb_contato(nome, telefone, email)\n"
+                    + "VALUES (?,?,?)");
+            inserir.setString(1, nome);
+            inserir.setString(2, telefone);
+            inserir.setString(3, email);
+            inserir.executeUpdate();
+            System.out.println("Cadastrado com sucesso!!!");
+        } catch (Exception e) {
+            System.out.println("Erro ao executar o comando: " + e);
+        }
+    }
+
+    public void empresa(String razaoSocial, String cnpj, String telefone, String endereco, boolean ativo, int idContato) {
+        try {
+            PreparedStatement inserirEmpresa = conn.getConexao().prepareStatement("INSERT INTO tb_empresa(razao_social, cnpj, telefone, endereco, ativo, id_contato)\n"
+                    + "VALUES (?,?,?,?,?,?)");
+            inserirEmpresa.setString(1, razaoSocial);
+            inserirEmpresa.setString(2, cnpj);
+            inserirEmpresa.setString(3, telefone);
+            inserirEmpresa.setString(4, endereco);
+            inserirEmpresa.setBoolean(5, ativo);
+            inserirEmpresa.setInt(6, idContato);
+            inserirEmpresa.executeUpdate();
+            System.out.println("Empresa cadastrada com sucesso! :)");
         } catch (Exception e) {
             System.out.println("Erro ao executar o comando: " + e);
         }
