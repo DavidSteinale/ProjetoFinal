@@ -27,10 +27,8 @@ public class ProjetoFinal {
         ContatoDAO contato = new ContatoDAO();
         EmpresaDAO empresa = new EmpresaDAO();
         AtendimentoDAO atendimento = new AtendimentoDAO();
-
-//        empresa.listar();
-//        empresa.atualizar();
-//        empresa.listar();
+        
+        
         String op;
         String opMenu1;
         int menuAtendimento;

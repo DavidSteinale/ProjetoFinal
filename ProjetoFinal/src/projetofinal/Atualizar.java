@@ -13,9 +13,11 @@ public class Atualizar {
             alterar.setString(1, nome);
             alterar.setInt(2, id);
             alterar.executeUpdate();
-            System.out.println("Atualizado com sucesso!!!");
+            System.out.println();
+            System.out.println("---Atualizado com sucesso!!!---");
+            System.out.println();
         } catch (Exception e) {
-            System.out.println("Erro ao executar o comando: " + e);
+            System.out.println("---Erro ao executar o comando:---" + e);
         }
     }
 
@@ -28,9 +30,11 @@ public class Atualizar {
             alterar.setString(3, email);
             alterar.setInt(4, id);
             alterar.executeUpdate();
-            System.out.println("Cadastrado com sucesso!!!");
+            System.out.println();
+            System.out.println("---Cadastrado com sucesso!!!---");
+            System.out.println();
         } catch (Exception e) {
-            System.out.println("Erro ao executar o comando: " + e);
+            System.out.println("---Erro ao executar o comando:---" + e);
         }
     }
 
@@ -44,20 +48,13 @@ public class Atualizar {
             alterar.setString(4, endereco);
             alterar.setBoolean(5, ativo);
             alterar.setInt(6, idContato);
-            alterar.setInt(7, idempresa);
-            
-            System.out.println("empresa atualizar " + idempresa);
-            System.out.println("razao" + razaoSocial);
-            System.out.println("cnpj" + cnpj);
-            System.out.println("endereco " + endereco);
-            System.out.println("telefone " + telefone);
-            System.out.println("ativo " + ativo);
-            System.out.println("id contato" + idContato);
+            alterar.setInt(7, idempresa);            
             alterar.executeUpdate();
-            
-            System.out.println("Empresa atualizada com sucesso! :)");
+            System.out.println();
+            System.out.println("---Empresa atualizada com sucesso! :)---");
+            System.out.println();
         } catch (Exception e) {
-            System.out.println("Erro ao executar o comando: " + e);
+            System.out.println("---Erro ao executar o comando:---" + e);
         }
     }
 
@@ -67,9 +64,11 @@ public class Atualizar {
             alterar.setString(1, descricao);
             alterar.setInt(2, num_atend);
             alterar.executeUpdate();
-            System.out.println("Atualizado com sucesso!!!");
+            System.out.println();
+            System.out.println("---Atualizado com sucesso!!!---");
+            System.out.println();
         } catch (Exception e) {
-            System.out.println("Erro ao executar o comando: " + e);
+            System.out.println("---Erro ao executar o comando:---" + e);
         }
     }
 }

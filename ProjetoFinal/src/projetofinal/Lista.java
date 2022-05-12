@@ -17,10 +17,11 @@ public class Lista {
             System.out.println("----------------------------------------");
             System.out.println("ANALISTA CADASTRADOS");
             System.out.println("----------------------------------------");
+            System.out.println("ID ANALISTA - NOME ANALISTA");   
             while (resultado.next()) {
                 int codigo = Integer.parseInt(resultado.getString("id_analista"));
                 String nome = resultado.getString("nome_analista");
-                System.out.println(codigo + " - " + util.preencheComEspaco(nome, " ", 25, 1));
+                System.out.println("     " + codigo + "      - " + util.preencheComEspaco(nome, " ", 25, 1));
             }
             System.out.println("----------------------------------------");
         } catch (Exception e) {
@@ -58,6 +59,7 @@ public class Lista {
             System.out.println("----------------------------------------");
             System.out.println("EMPRESAS CADASTRADAS");
             System.out.println("----------------------------------------");
+            System.out.println("ID  - ");
 
             while (resultado.next()) {
                 int codigo = Integer.parseInt(resultado.getString("id_empresa"));
@@ -67,7 +69,7 @@ public class Lista {
                 String endereco = resultado.getString("endereco");
                 boolean ativo = resultado.getBoolean("ativo");
                 int idContato = Integer.parseInt(resultado.getString("id_contato"));
-                System.out.println(codigo + " - " + util.preencheComEspaco(razaoSocial, " ", 17, 1)
+                System.out.println("    " + codigo + "      - " + util.preencheComEspaco(razaoSocial, " ", 17, 1)
                         + util.preencheComEspaco(cnpj, " ", 17, 1)
                         + util.preencheComEspaco(telefone, " ", 17, 1)
                         + util.preencheComEspaco(endereco, " ", 40, 1)
@@ -88,12 +90,15 @@ public class Lista {
             System.out.println("----------------------------------------");
             System.out.println("LISTA DE ATENDIMENTO");
             System.out.println("----------------------------------------");
+            System.out.println("N. ATENDIMENTO - RAZÃO SOCIAL    - ANALISTA          - DESCRIÇÃO");
             while (resultado.next()) {
                 int num_atend = Integer.parseInt(resultado.getString("num_atendimento"));
                 String razao_social = resultado.getString("razao_social");
                 String nome_analista = resultado.getString("nome_analista");               
                 String desc = resultado.getString("descricao");
-                System.out.println(num_atend + " - " + razao_social + " - " + nome_analista + " - " + util.preencheComEspaco(desc, " ", 25, 1));
+                System.out.println("       " + num_atend + "       - "
+                        + util.preencheComEspaco(razao_social, " ", 15, 1)
+                        + " - " + util.preencheComEspaco(nome_analista, " ", 17, 1) + " - " + util.preencheComEspaco(desc, " ", 25, 1));
             }
             System.out.println("----------------------------------------");
         } catch (Exception e) {

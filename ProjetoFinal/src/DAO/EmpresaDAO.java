@@ -53,13 +53,11 @@ public class EmpresaDAO {
         Deletar deletar = new Deletar();
         System.out.print("Informe o codigo da Empresa a ser excluída: ");
         int idEmpresa = scanner.nextInt();
-
         deletar.empresa(idEmpresa);
     }
 
     public void atualizar() {
         Atualizar atualizar = new Atualizar();
-
         System.out.print("Informe o ID da Empresa a ser atualizada:");
         idEmpresa = scanner.nextInt();
         scanner.nextLine();
@@ -71,7 +69,7 @@ public class EmpresaDAO {
         this.telefone = scanner.nextLine().toUpperCase();
         System.out.print("Informe o Endereço: ");
         this.endereco = scanner.nextLine().toUpperCase();
-        System.out.print("Empresa ativa? 1 para SIM  - 0 para NAO ");
+        System.out.print("Empresa ativa? 1 para SIM  - 0 para NAO: ");
         this.ativo = scanner.nextInt();
         if (ativo == 1) {
             this.status = true;

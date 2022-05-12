@@ -15,9 +15,11 @@ public class Inserir {
                     + "VALUES (?)");
             inserir.setString(1, nome);
             inserir.executeUpdate();
-            System.out.println("Cadastrado com sucesso!!!");
+            System.out.println();
+            System.out.println("---Cadastrado com sucesso!!!---");
+            System.out.println();
         } catch (Exception e) {
-            System.out.println("Erro ao executar o comando: " + e);
+            System.out.println("---Erro ao executar o comando:---" + e);
         }
     }
 
@@ -29,9 +31,11 @@ public class Inserir {
             inserir.setString(2, telefone);
             inserir.setString(3, email);
             inserir.executeUpdate();
-            System.out.println("Cadastrado com sucesso!!!");
+            System.out.println();
+            System.out.println("---Cadastrado com sucesso!!!---");
+            System.out.println();
         } catch (Exception e) {
-            System.out.println("Erro ao executar o comando: " + e);
+            System.out.println("---Erro ao executar o comando:---" + e);
         }
     }
 
@@ -46,9 +50,11 @@ public class Inserir {
             inserirEmpresa.setBoolean(5, ativo);
             inserirEmpresa.setInt(6, idContato);
             inserirEmpresa.executeUpdate();
-            System.out.println("Empresa cadastrada com sucesso! :)");
+            System.out.println();
+            System.out.println("---Empresa cadastrada com sucesso! :)---");
+            System.out.println();
         } catch (Exception e) {
-            System.out.println("Erro ao executar o comando: " + e);
+            System.out.println("---Erro ao executar o comando:---" + e);
         }
     }
 
@@ -60,9 +66,11 @@ public class Inserir {
             inserir.setInt(2, id_emp);
             inserir.setInt(3, id_ana);
             inserir.executeUpdate();
-            System.out.println("Cadastrado com sucesso!!!");
+            System.out.println();
+            System.out.println("---Cadastrado com sucesso!!!---");
+            System.out.println();
         } catch (Exception e) {
-            System.out.println("Erro ao executar o comando: " + e);
+            System.out.println("---Erro ao executar o comando:---" + e);
         }
     }
 }
