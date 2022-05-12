@@ -47,5 +47,6 @@ public class Atendimento {
         System.out.print("Insira a nova descrição: ");
         String descricao = scanner.nextLine().toUpperCase();
         atualizar.atendimento(descricao, num_atend);
-    }
+    }   
+    
 }
