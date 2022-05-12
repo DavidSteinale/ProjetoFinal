@@ -1,4 +1,4 @@
-package projetofinal;
+package conexao;
 
 import com.sun.jdi.connect.Connector;
 import conexao.Conexao;

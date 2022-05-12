@@ -1,13 +1,13 @@
-package DAO;
+package objetos;
 
-import projetofinal.Atualizar;
-import projetofinal.Deletar;
-import projetofinal.Inserir;
-import projetofinal.Lista;
+import conexao.Atualizar;
+import conexao.Deletar;
+import conexao.Inserir;
+import conexao.Lista;
 
 import java.util.Scanner;
 
-public class EmpresaDAO {
+public class Empresa {
 
     Scanner scanner = new Scanner(System.in);
 
@@ -78,9 +78,8 @@ public class EmpresaDAO {
         }
         System.out.print("Informe o ID do Contato: ");
         this.idContato = scanner.nextInt();
+        atualizar.empresa(razaoSocial, cnpj, telefone, endereco, status, idContato, idEmpresa);
 
-        atualizar.empresa(razaoSocial, cnpj, telefone, endereco, status, idContato,idEmpresa);
-        
     }
 
 }

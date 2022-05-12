@@ -1,13 +1,13 @@
-package DAO;
+package objetos;
 
-import projetofinal.Atualizar;
-import projetofinal.Deletar;
-import projetofinal.Inserir;
-import projetofinal.Lista;
+import conexao.Atualizar;
+import conexao.Deletar;
+import conexao.Inserir;
+import conexao.Lista;
 
 import java.util.Scanner;
 
-public class AtendimentoDAO {
+public class Atendimento {
 
     Scanner scanner = new Scanner(System.in);
 
@@ -48,5 +48,4 @@ public class AtendimentoDAO {
         String descricao = scanner.nextLine().toUpperCase();
         atualizar.atendimento(descricao, num_atend);
     }
-
 }

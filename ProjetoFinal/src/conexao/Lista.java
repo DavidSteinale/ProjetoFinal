@@ -1,4 +1,4 @@
-package projetofinal;
+package conexao;
 
 import conexao.Conexao;
 import java.sql.PreparedStatement;
@@ -9,6 +9,8 @@ public class Lista {
 
     Conexao acesso = new Conexao();
     Util util = new Util();
+    
+    String status;
 
     public void analista() {
         try {
@@ -17,11 +19,11 @@ public class Lista {
             System.out.println("----------------------------------------");
             System.out.println("ANALISTA CADASTRADOS");
             System.out.println("----------------------------------------");
-            System.out.println("ID ANALISTA - NOME ANALISTA");   
+            System.out.println("CÓDIGO   - NOME");   
             while (resultado.next()) {
                 int codigo = Integer.parseInt(resultado.getString("id_analista"));
                 String nome = resultado.getString("nome_analista");
-                System.out.println("     " + codigo + "      - " + util.preencheComEspaco(nome, " ", 25, 1));
+                System.out.println("  " + codigo + "      - " + util.preencheComEspaco(nome, " ", 25, 1));
             }
             System.out.println("----------------------------------------");
         } catch (Exception e) {
@@ -36,13 +38,13 @@ public class Lista {
             System.out.println("----------------------------------------");
             System.out.println("CONTATOS CADASTRADOS");
             System.out.println("----------------------------------------");
-            System.out.println("CÓDIGO - NOME              - TELEFONE     - EMAIL");
+            System.out.println("CÓDIGO    - NOME              - TELEFONE     - E-MAIL");
             while (resultado.next()) {
                 int codigo = Integer.parseInt(resultado.getString("id_contato"));
                 String nome = resultado.getString("nome");
                 String telefone = resultado.getString("telefone");
                 String email = resultado.getString("email");
-                System.out.println(codigo + "      - " + util.preencheComEspaco(nome, " ", 17, 1)
+                System.out.println("   " +codigo + "      - " + util.preencheComEspaco(nome, " ", 17, 1)
                         + " - " + util.preencheComEspaco(telefone, " ", 12, 1)
                         + " - " + util.preencheComEspaco(email, " ", 25, 1));
             }
@@ -59,7 +61,8 @@ public class Lista {
             System.out.println("----------------------------------------");
             System.out.println("EMPRESAS CADASTRADAS");
             System.out.println("----------------------------------------");
-            System.out.println("ID  - ");
+            System.out.println("CÓDIGO - STATUS     - RAZÃO SOCIAL      - CNPJ           - TELEFONE"
+             + "     - RUA");
 
             while (resultado.next()) {
                 int codigo = Integer.parseInt(resultado.getString("id_empresa"));
@@ -69,11 +72,17 @@ public class Lista {
                 String endereco = resultado.getString("endereco");
                 boolean ativo = resultado.getBoolean("ativo");
                 int idContato = Integer.parseInt(resultado.getString("id_contato"));
-                System.out.println("    " + codigo + "      - " + util.preencheComEspaco(razaoSocial, " ", 17, 1)
-                        + util.preencheComEspaco(cnpj, " ", 17, 1)
-                        + util.preencheComEspaco(telefone, " ", 17, 1)
-                        + util.preencheComEspaco(endereco, " ", 40, 1)
-                        + ativo);
+                
+                if(ativo){
+                    this.status = "ATIVO";
+                }else{
+                    this.status = "INATIVO";
+                }
+                        
+                System.out.println("  " + codigo + "    - " + util.preencheComEspaco(status, " ", 8, 1)+ "   - " + util.preencheComEspaco(razaoSocial, " ", 17, 1)
+                        + " - " + util.preencheComEspaco(cnpj, " ", 14, 1)
+                        + " - " + util.preencheComEspaco(telefone, " ", 12, 1)
+                        + " - " + util.preencheComEspaco(endereco, " ", 50, 1));
             }
             System.out.println("----------------------------------------");
         } catch (Exception e) {

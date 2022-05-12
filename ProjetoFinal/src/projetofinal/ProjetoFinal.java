@@ -3,10 +3,10 @@
  */
 package projetofinal;
 
-import DAO.AnalistaDAO;
-import DAO.AtendimentoDAO;
-import DAO.ContatoDAO;
-import DAO.EmpresaDAO;
+import objetos.Analista;
+import objetos.Atendimento;
+import objetos.Contato;
+import objetos.Empresa;
 import conexao.Conexao;
 import java.util.Scanner;
 
@@ -23,12 +23,11 @@ public class ProjetoFinal {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        AnalistaDAO analista = new AnalistaDAO();
-        ContatoDAO contato = new ContatoDAO();
-        EmpresaDAO empresa = new EmpresaDAO();
-        AtendimentoDAO atendimento = new AtendimentoDAO();
-        
-        
+        Analista analista = new Analista();
+        Contato contato = new Contato();
+        Empresa empresa = new Empresa();
+        Atendimento atendimento = new Atendimento();
+
         String op;
         String opMenu1;
         int menuAtendimento;

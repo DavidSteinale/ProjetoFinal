@@ -1,12 +1,12 @@
-package DAO;
+package objetos;
 
 import java.util.Scanner;
-import projetofinal.Atualizar;
-import projetofinal.Deletar;
-import projetofinal.Inserir;
-import projetofinal.Lista;
+import conexao.Atualizar;
+import conexao.Deletar;
+import conexao.Inserir;
+import conexao.Lista;
 
-public class AnalistaDAO {
+public class Analista {
 
     Scanner scanner = new Scanner(System.in);
 
