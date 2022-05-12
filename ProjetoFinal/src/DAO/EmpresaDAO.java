@@ -61,7 +61,7 @@ public class EmpresaDAO {
         Atualizar atualizar = new Atualizar();
 
         System.out.print("Informe o ID da Empresa a ser atualizada:");
-        int idEmpresa = scanner.nextInt();
+        idEmpresa = scanner.nextInt();
         scanner.nextLine();
         System.out.print("Informe a Razão Social: ");
         this.razaoSocial = scanner.nextLine().toUpperCase();
@@ -81,7 +81,8 @@ public class EmpresaDAO {
         System.out.print("Informe o ID do Contato: ");
         this.idContato = scanner.nextInt();
 
-        atualizar.empresa(razaoSocial, cnpj, telefone, endereco, status, idContato);
+        atualizar.empresa(razaoSocial, cnpj, telefone, endereco, status, idContato,idEmpresa);
+        
     }
 
 }

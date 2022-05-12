@@ -40,14 +40,14 @@ public class ContatoDAO {
 
 
     public void atualizar() {
-        System.out.println("Informe o id do contato a ser atualizado:");
+        System.out.print("Informe o id do contato a ser atualizado:");
         int cod_contato = scanner.nextInt();
         scanner.nextLine();
-        System.out.println("Informe o novo nome:");
+        System.out.print("Informe o novo nome:");
         String nome = scanner.nextLine().toUpperCase();
-        System.out.println("Informe o novo telefone:");
+        System.out.print("Informe o novo telefone:");
         String telefone = scanner.nextLine().toUpperCase();
-        System.out.println("Informe o novo E-mail:");
+        System.out.print("Informe o novo E-mail:");
         String email = scanner.nextLine().toUpperCase();
         Atualizar atualizar = new Atualizar();
         atualizar.contato(nome, telefone, email, cod_contato);

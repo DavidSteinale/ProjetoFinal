@@ -34,15 +34,27 @@ public class Atualizar {
         }
     }
 
-    public void empresa(String razaoSocial, String cnpj, String telefone, String endereco, boolean ativo, int idContato) {
-        //String statement = "UPDATE tb_empresa SET razao_social = ?, cnpj = ?, telefone = ?, endereco = ?, ativo = ?, WHERE id_empresa =?";
+    public void empresa(String razaoSocial, String cnpj, String telefone, String endereco, boolean ativo, int idContato, int idempresa) {
+        
         try {
-            PreparedStatement alterar = conn.getConexao().prepareStatement("UPDATE tb_empresa SET razao_social = ?, cnpj = ?, telefone = ?, endereco = ?, ativo = ?, WHERE id_empresa =?");
+            PreparedStatement alterar = conn.getConexao().prepareStatement("UPDATE tb_empresa SET razao_social=?, cnpj=?, telefone=?, endereco=?, ativo=?, id_contato=? WHERE id_empresa =?");
             alterar.setString(1, razaoSocial);
             alterar.setString(2, cnpj);
             alterar.setString(3, telefone);
             alterar.setString(4, endereco);
             alterar.setBoolean(5, ativo);
+            alterar.setInt(6, idContato);
+            alterar.setInt(7, idempresa);
+            
+            System.out.println("empresa atualizar " + idempresa);
+            System.out.println("razao" + razaoSocial);
+            System.out.println("cnpj" + cnpj);
+            System.out.println("endereco " + endereco);
+            System.out.println("telefone " + telefone);
+            System.out.println("ativo " + ativo);
+            System.out.println("id contato" + idContato);
+            alterar.executeUpdate();
+            
             System.out.println("Empresa atualizada com sucesso! :)");
         } catch (Exception e) {
             System.out.println("Erro ao executar o comando: " + e);

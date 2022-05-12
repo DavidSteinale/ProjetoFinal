@@ -41,7 +41,7 @@ public class AtendimentoDAO {
 
     public void atualizar() {
         Atualizar atualizar = new Atualizar();
-        System.out.print("Informe o número do atendimento a ser atualizado");
+        System.out.print("Informe o número do atendimento a ser atualizado?");
         int num_atend = scanner.nextInt();
         scanner.nextLine();
         System.out.print("Insira a nova descrição: ");

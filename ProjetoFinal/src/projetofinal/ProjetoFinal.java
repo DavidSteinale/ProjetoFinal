@@ -27,27 +27,33 @@ public class ProjetoFinal {
         ContatoDAO contato = new ContatoDAO();
         EmpresaDAO empresa = new EmpresaDAO();
         AtendimentoDAO atendimento = new AtendimentoDAO();
-        
+
+//        empresa.listar();
+//        empresa.atualizar();
+//        empresa.listar();
         String op;
         String opMenu1;
-        
+        int menuAtendimento;
+        int menuPrincipal;
+        int menuEmpresa;
+        int menuAnalista;
+        int menuContato;
+        int menuFinal;
 
-
-        empresa.inserir();
         do {
+            String opAtendimento;
+            String opEmpresa;
+            String opAnalista;
+            String opContato;
+
+            System.out.println("=====   MENU PRINCIPAL  =====");
             System.out.println("=====Selecione uma opção=====");
             System.out.println("1 - Atendimento");
             System.out.println("2 - Empresa");
             System.out.println("3 - Analista");
             System.out.println("4 - Contato");
             System.out.println("5 - Sair");
-
-            String opAtendimento;
-            String opEmpresa;
-            String opAnalista;
-            String opContato;
-
-            int menuPrincipal = scanner.nextInt();
+            menuPrincipal = scanner.nextInt();
 
             switch (menuPrincipal) {
                 case 1:
@@ -57,10 +63,11 @@ public class ProjetoFinal {
                         System.out.println("2 - Listar Atendimentos");
                         System.out.println("3 - Deletar Atendimento");
                         System.out.println("4 - Atualizar os dados do Atendimento");
+                        System.out.println("5 - Voltar ao menu principal");
 
-                        int menuAtendimento = scanner.nextInt();
+                        menuAtendimento = scanner.nextInt();
 
-                        switch(menuAtendimento){
+                        switch (menuAtendimento) {
                             case 1:
                                 atendimento.inserir();
                                 break;
@@ -73,12 +80,16 @@ public class ProjetoFinal {
                             case 4:
                                 atendimento.atualizar();
                                 break;
-                        }
-                        System.out.println("Deseja voltar ao Menu Analista? SIM/NAO");
-                        opAtendimento = scanner.next();
+                            case 5:
+                                System.out.println("Menu finalizado");
+                                ;
+                                break;
+                            default:
+                                System.out.println("Operação Invalida!!");
+                        } // fecha switch menuAtendimento
+                    } while (menuAtendimento != 5);
+                    break; // break case 1
 
-                    } while (opAtendimento.equalsIgnoreCase("nao"));
-                    break;
                 case 2:
                     do {
                         System.out.println("=====Selecione uma Opção=====");
@@ -86,8 +97,9 @@ public class ProjetoFinal {
                         System.out.println("2 - Listar Empresas");
                         System.out.println("3 - Deletar Empresa");
                         System.out.println("4 - Atualizar os dados da Empresa");
+                        System.out.println("5 - Voltar ao menu principal");
 
-                        int menuEmpresa = scanner.nextInt();
+                        menuEmpresa = scanner.nextInt();
 
                         switch (menuEmpresa) {
                             case 1:
@@ -102,12 +114,16 @@ public class ProjetoFinal {
                             case 4:
                                 empresa.atualizar();
                                 break;
-                        }
-                        System.out.println("Deseja voltar ao Menu Analista? SIM/NAO");
-                        opEmpresa = scanner.nextLine();
+                            case 5:
+                                System.out.println("Menu finalizado");
+                                ;
+                                break;
+                            default:
+                                System.out.println("Operação Invalida!!");
+                        } // fecha switch menuEmpresa
+                    } while (menuEmpresa != 5);
+                    break; // break case 2
 
-                    } while (opEmpresa.equalsIgnoreCase("nao"));
-                    break;
                 case 3:
                     do {
                         System.out.println("===Selecione uma Opção===");
@@ -115,8 +131,9 @@ public class ProjetoFinal {
                         System.out.println("2 - Listar Analistas");
                         System.out.println("3 - Deletar Analista");
                         System.out.println("4 - Atualizar os dados do Analista");
+                        System.out.println("5 - Voltar ao menu principal");
 
-                        int menuAnalista = scanner.nextInt();
+                        menuAnalista = scanner.nextInt();
 
                         switch (menuAnalista) {
                             case 1:
@@ -131,11 +148,16 @@ public class ProjetoFinal {
                             case 4:
                                 analista.atualizar();
                                 break;
-                        }
-                        System.out.println("Deseja voltar ao Menu Analista? SIM/NAO");
-                        opAnalista = scanner.nextLine();
-                    } while (opAnalista.equalsIgnoreCase("nao"));
-                    break;
+                            case 5:
+                                System.out.println("Menu finalizado");
+                                ;
+                                break;
+                            default:
+                                System.out.println("Operação Invalida!!");
+                        } // fecha switch menuAnalista
+                    } while (menuAnalista != 5);
+                    break; // break case 3
+
                 case 4:
                     do {
                         System.out.println("===Selecione uma Opção===");
@@ -143,8 +165,9 @@ public class ProjetoFinal {
                         System.out.println("2 - Listar Contatos");
                         System.out.println("3 - Deletar Contato");
                         System.out.println("4 - Atualizar os dados do Contato");
+                        System.out.println("5 - Voltar ao menu principal");
 
-                        int menuContato = scanner.nextInt();
+                        menuContato = scanner.nextInt();
 
                         switch (menuContato) {
                             case 1:
@@ -159,20 +182,37 @@ public class ProjetoFinal {
                             case 4:
                                 contato.atualizar();
                                 break;
-                        }
+                            case 5:
+                                System.out.println("Menu finalizado");
+                                ;
+                                break;
+                            default:
+                                System.out.println("Operação Invalida!!");
+                        } // fecha switch menuContato
+                    } while (menuContato != 5);
+                    break; // break case 4
 
-                        System.out.println("Deseja voltar ao Menu Analista? SIM/NAO");
-                        opContato = scanner.nextLine();
-                    } while (opContato.equalsIgnoreCase("nao"));
-                    break;
                 case 5:
+                    System.out.println("Tem certeza que deseja sair do sistema 1 - SIM | 2 - NAO?");
+                    menuFinal = scanner.nextInt();
+
+                    switch (menuFinal) {
+                        case 1:
+                            System.out.println("SISTEMA ENCERRADO!");
+                            menuPrincipal = 6;
+                            break;
+                        case 2:
+                            System.out.println("...");
+                            break;
+                        default:
+                            System.out.println("Operação Invalida!!");
+                    }//fecha switch menuFinal
                     break;
-            }
 
-            System.out.println("Tem certeza que deseja sair do sistema SIM/NAO?");
-//            System.out.println("SIM/NAO5");
-            opMenu1 = scanner.next();
-        } while (opMenu1.equalsIgnoreCase("nao"));
+                default:
+                    System.out.println("operacao invalida!!");
+            } //fecha switch menuPrincipal
 
-  };
+        } while (menuPrincipal != 6);
+    }
 }
